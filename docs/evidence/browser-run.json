@@ -1,0 +1,12 @@
+{
+  "publicSite": "https://figure-ledger.pages.dev/",
+  "sheetId": "FL-DEMO-1791079892296",
+  "transactions": {
+    "open": "0x1c20ba4f8991fcc4d54e13edd7fabc7efffc4c47cf1bdca88ed8b0fd07c63edc",
+    "verify": "0xff5e82a264d764869a369a142cb1fba7a38a885cdac5fe78c67c883c9c9f2142"
+  },
+  "values": [120, 80],
+  "computed": 200,
+  "finalState": "MATCH",
+  "uiResult": "DEMO FINALIZED"
+}

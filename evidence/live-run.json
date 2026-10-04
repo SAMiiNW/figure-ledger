@@ -1,0 +1,42 @@
+{
+  "sheetId": "TOTAL-1791079376",
+  "transactions": {
+    "open": "0x9bfc099456b5f9f692e3b8fb405531e36f792b50bfe59177d65e597d78c1e7d3",
+    "verify": "0x98ff96235f3c73bf37adf33959404529a4e1d710dd3c0b6c568636f064ec2b24"
+  },
+  "state": {
+    "auditor": "0x013A0745a3b2DbF87f4AB377266fCcb7e6eEC88A",
+    "citations": [
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ],
+    "claimed_result": 200,
+    "computed_result": 200,
+    "digests": [
+      "7e556ad045244a8b5b29443b3b0b7ff134ecd5898b54fbe125b2cff917098b65",
+      "ac34db174ed0ef08e7cf51a250b67c7ef1f1a0fdcb5bf84ecbf50e6124b10ed1"
+    ],
+    "id": "TOTAL-1791079376",
+    "labels": [
+      "North completed requests",
+      "South completed requests"
+    ],
+    "operation": "SUM",
+    "owner": "0xCAFA30BF94D4fb01146588a1b7901BD85E7DbD0f",
+    "sources": [
+      "https://raw.githubusercontent.com/SAMiiNW/figure-ledger/main/docs/evidence/north-count.md",
+      "https://cdn.jsdelivr.net/gh/SAMiiNW/figure-ledger@main/docs/evidence/south-count.md"
+    ],
+    "state": "MATCH",
+    "title": "September service total",
+    "values": [
+      120,
+      80
+    ]
+  },
+  "walletDisclosure": "Both wallets and evidence files are operator-controlled fixtures."
+}
