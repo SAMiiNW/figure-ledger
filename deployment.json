@@ -7,13 +7,13 @@
   "sourceCommit": "efc86494f2582ba59e38122691bd77f1fe2eb9ab",
   "repository": "https://github.com/SAMiiNW/figure-ledger",
   "publicSite": "https://figure-ledger.pages.dev/",
-  "frontendDeployment": "https://e56bb469.figure-ledger.pages.dev",
+  "frontendDeployment": "https://ca4da4fd.figure-ledger.pages.dev",
   "backendLiveTransactions": {
     "open": "0x9bfc099456b5f9f692e3b8fb405531e36f792b50bfe59177d65e597d78c1e7d3",
     "verify": "0x98ff96235f3c73bf37adf33959404529a4e1d710dd3c0b6c568636f064ec2b24"
   },
   "browserLiveTransactions": {
-    "open": "0x1c20ba4f8991fcc4d54e13edd7fabc7efffc4c47cf1bdca88ed8b0fd07c63edc",
-    "verify": "0xff5e82a264d764869a369a142cb1fba7a38a885cdac5fe78c67c883c9c9f2142"
+    "open": "0xe2727b7d981a69fb7ec88792733725fccba7b4e82bd17decd08b676d8dfc7d82",
+    "verify": "0xb823ca712174c6052bc469e162776e9670dd098efaabd12927d0354b77e1db64"
   }
 }

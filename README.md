@@ -1,24 +1,48 @@
-# Figure Ledger
+# FIGURE LEDGER // OPERATOR MANUAL
 
-Figure Ledger is a source-bound calculator for claims that should be reproducible, not merely persuasive. A sheet names its inputs, fixes one deterministic operation, and records the claimed result. Validators retrieve distinct evidence sources and agree on every exact integer, citation index, and digest. Contract code recomputes the result and returns `MATCH` or `MISMATCH`.
+## PURPOSE
 
-The public application looks and behaves like an audit calculator. Users compose a sheet, paste evidence into a source drawer, verify it, and receive a numeric receipt. SUM, DIFFERENCE, and RATIO_BPS are intentionally bounded so reviewers can reproduce the arithmetic without trusting prose.
+Rebuild a numeric claim from public evidence. Do not ask validators whether a total *sounds right*. Ask them for exact source-bound integers, then let deterministic contract code perform the arithmetic.
 
-## Verified release
+```text
+SOURCE DRAWER  ->  VALIDATOR EXTRACTION  ->  CONTRACT OPERATOR  ->  RECEIPT
+ URLs              values + citations       SUM / Δ / ratio        MATCH
+```
 
-- Application: https://figure-ledger.pages.dev/
-- Repository: https://github.com/SAMiiNW/figure-ledger
-- StudioNet contract: `0x2c5Aaa83f41d008b6370B4DE7f4b4F30fb6Ea5d4`
-- Deployment: `FINALIZED / MAJORITY_AGREE / SUCCESS`
-- Public browser run: extracted `120` and `80`, recomputed `200`, and finalized `MATCH`
+## CONTROL SURFACE
 
-The public run used the exact canonical URL and recorded both finalized transaction hashes in `evidence/browser-run.json`.
+`OPEN LEDGER` fixes the labels, auditor, operation, and claimed result. `VERIFY SOURCES` retrieves distinct evidence URLs and stores one digest and citation set per extracted value. `LOAD BY SHEET ID` reproduces the completed calculation.
 
-## Checks
+Supported operators:
+
+- `SUM`: `A + B`
+- `DIFFERENCE`: `A - B`
+- `RATIO_BPS`: `(A × 10,000) / B`
+
+Malformed figures, repeated sources, unsupported operations, unauthorized auditors, and replayed sheets are rejected.
+
+## VERIFIED MACHINE
+
+```text
+PUBLIC      https://figure-ledger.pages.dev/
+SOURCE      https://github.com/SAMiiNW/figure-ledger
+CONTRACT    0x2c5Aaa83f41d008b6370B4DE7f4b4F30fb6Ea5d4
+DEPLOYMENT  FINALIZED / MAJORITY_AGREE / SUCCESS
+BROWSER     120 + 80 = 200 / MATCH
+```
+
+Receipts: `evidence/live-run.json` and `evidence/browser-run.json`
+
+Source comparison: `evidence/deployment-verification.json`
+
+## BENCH TEST
 
 ```text
 python -m pytest -q
 genvm-lint check contracts/contract.py
+python scripts/verify_deployment.py
 ```
 
-The sample counts and wallets are operator-controlled fixtures and are labelled accordingly.
+## FIXTURE LABEL
+
+The sample counts, evidence pages, and demo wallets are operator-controlled. They demonstrate reproducibility; they are not independent data authorities.
