@@ -1,42 +1,63 @@
 {
-  "sheetId": "TOTAL-1791079376",
+  "sheetId": "SEPT-AUTH-1791251325",
   "transactions": {
-    "open": "0x9bfc099456b5f9f692e3b8fb405531e36f792b50bfe59177d65e597d78c1e7d3",
-    "verify": "0x98ff96235f3c73bf37adf33959404529a4e1d710dd3c0b6c568636f064ec2b24"
+    "approveNorth": "0x3ed345caa08fcc337931b5661863ba34e8a1c8ff1b58f15b8eb97f9cdbfb9189",
+    "approveSouth": "0x3984f4a161ef6cf9052b6cc6111ba7ae4d0d84d22d61477dee10642f351206fe",
+    "open": "0xc0b5a1436e9f4f767a8b8b87b2e6ef80855f1bcfe249b38e9492e63af22f712c",
+    "verify": "0x9951c36c29b2d10cfdfee0ac8d031d4fd1e4d0db33257ae7a6b2c0ed6ad4bb85",
+    "consume": "0xcf489787f79db12daa323204d65e132a436493c201c82bd47c80270feb0c835e"
   },
+  "sources": [
+    "https://raw.githubusercontent.com/SAMiiNW/figure-ledger/e79eeda07456e17bba30a96e3570e9274c3bd84c/docs/evidence/north-count.md",
+    "https://cdn.jsdelivr.net/gh/SAMiiNW/figure-ledger@e79eeda07456e17bba30a96e3570e9274c3bd84c/docs/evidence/south-count.md"
+  ],
   "state": {
-    "auditor": "0x013A0745a3b2DbF87f4AB377266fCcb7e6eEC88A",
-    "citations": [
-      [
-        0
-      ],
-      [
-        1
-      ]
+    "auditor": "0x013a0745a3b2dbf87f4ab377266fccb7e6eec88a",
+    "authority_ids": [
+      "NORTH_OPS",
+      "SOUTH_AUDIT"
     ],
-    "claimed_result": 200,
+    "beneficiary": "0xad049e0edc298c97552ed60071a35bfc60181fd4",
     "computed_result": 200,
+    "consequence": "Authorize the October maintenance tranche for the named beneficiary",
+    "decision": "AUTHORIZED",
     "digests": [
-      "7e556ad045244a8b5b29443b3b0b7ff134ecd5898b54fbe125b2cff917098b65",
-      "ac34db174ed0ef08e7cf51a250b67c7ef1f1a0fdcb5bf84ecbf50e6124b10ed1"
+      "69ea93fbc24d7c83cdb2eaa4ab598fffd7a587bd9690fdfa8fb7a11942819995",
+      "e0813bf69abd0101f51ecefe876f5d9ce070e5950ae5edc21aa8c911159df66e"
     ],
-    "id": "TOTAL-1791079376",
-    "labels": [
-      "North completed requests",
-      "South completed requests"
+    "figures": [
+      {
+        "metric_quote": "Metric: completed service requests.",
+        "period_quote": "Reporting period: 2026-09-01 through 2026-09-30.",
+        "source_index": 0,
+        "unit_quote": "Unit: requests.",
+        "value": 120,
+        "value_quote": "Final value: 120 requests."
+      },
+      {
+        "metric_quote": "Metric: completed service requests.",
+        "period_quote": "Reporting period: 2026-09-01 through 2026-09-30.",
+        "source_index": 1,
+        "unit_quote": "Unit: requests.",
+        "value": 80,
+        "value_quote": "Final value: 80 requests."
+      }
     ],
+    "id": "SEPT-AUTH-1791251325",
+    "metric": "completed service requests",
     "operation": "SUM",
-    "owner": "0xCAFA30BF94D4fb01146588a1b7901BD85E7DbD0f",
+    "owner": "0xcafa30bf94d4fb01146588a1b7901bd85e7dbd0f",
+    "period_end": "2026-09-30",
+    "period_start": "2026-09-01",
     "sources": [
-      "https://raw.githubusercontent.com/SAMiiNW/figure-ledger/main/docs/evidence/north-count.md",
-      "https://cdn.jsdelivr.net/gh/SAMiiNW/figure-ledger@main/docs/evidence/south-count.md"
+      "https://raw.githubusercontent.com/SAMiiNW/figure-ledger/e79eeda07456e17bba30a96e3570e9274c3bd84c/docs/evidence/north-count.md",
+      "https://cdn.jsdelivr.net/gh/SAMiiNW/figure-ledger@e79eeda07456e17bba30a96e3570e9274c3bd84c/docs/evidence/south-count.md"
     ],
-    "state": "MATCH",
-    "title": "September service total",
-    "values": [
-      120,
-      80
-    ]
+    "state": "CONSUMED",
+    "threshold": 200,
+    "threshold_mode": "AT_LEAST",
+    "title": "September service authorization",
+    "unit": "requests"
   },
-  "walletDisclosure": "Both wallets and evidence files are operator-controlled fixtures."
+  "walletDisclosure": "All demo wallets and authority files are operator-controlled fixtures; the contract nevertheless enforces registered origins, exact context, source receipts, independent auditor and beneficiary roles."
 }

@@ -46,9 +46,15 @@ def test_authoritative_context_to_consumed_consequence(direct_vm, direct_deploy,
     assert result["metric"] == "completed service requests" and result["unit"] == "requests"
     assert result["period_start"] == "2026-09-01" and len(result["figures"]) == 2
     assert result["digests"] == [hashlib.sha256(NORTH_BODY.encode()).hexdigest(), hashlib.sha256(SOUTH_BODY.encode()).hexdigest()]
+    with direct_vm.prank(direct_alice):
+        with direct_vm.expect_revert("Only the beneficiary"):
+            contract.consume_authorization("sept-total")
     with direct_vm.prank(direct_bob):
         contract.consume_authorization("sept-total")
     assert contract.get_sheet("sept-total")["state"] == "CONSUMED"
+    with direct_vm.prank(direct_bob):
+        with direct_vm.expect_revert("Authorization is unavailable"):
+            contract.consume_authorization("sept-total")
 
 def test_governor_authority_and_url_binding(direct_vm, direct_deploy, direct_alice, direct_bob, monkeypatch):
     contract = direct_deploy(CONTRACT, sdk_version=SDK_VERSION)

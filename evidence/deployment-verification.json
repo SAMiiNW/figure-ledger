@@ -1,9 +1,7 @@
 {
-  "contract": "0x2c5Aaa83f41d008b6370B4DE7f4b4F30fb6Ea5d4",
-  "deploymentTransaction": "0x7e1565aa4abcd91e9643343c414550cfba7b62524bc61fdf839a4cc75f86a245",
-  "status": "FINALIZED",
-  "consensus": "MAJORITY_AGREE",
-  "execution": "SUCCESS",
-  "sourceSha256": "e4db0a5fa5b60018c42152c2db909d6d73c20a5aa3c971589b4a5e7e34654d6c",
+  "contract": "0x29235EFA4319eD831CFEF340d1Fab4d726bc3A17",
+  "deploymentTransaction": "0x2c87fc7a1381a2e7350bc7763ce9dd405578ef7abbb674c7a5c3509fe24a9d6c",
+  "network": "GenLayer Studio Next",
+  "sourceSha256": "b1017fbb20cfd7df95ea8135ff98d12026b48254da15a71454297ddcf61b912e",
   "sourceMatches": true
 }

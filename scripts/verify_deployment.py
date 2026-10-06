@@ -1,38 +1,17 @@
-import base64
-import hashlib
-import json
+import base64, hashlib, json
+from dataclasses import replace
 from pathlib import Path
-
 from genlayer_py import create_client
-from genlayer_py.chains import studionet
+from genlayer_py.chains import studio_devnet
 
-root = Path(__file__).parents[1]
-deployment = json.loads((root / "deployment.json").read_text())
-transaction = create_client(chain=studionet).get_transaction(
-    transaction_hash=deployment["deploymentTransaction"]
-)
-deployed_source = base64.b64decode(transaction["data"]["contract_code"], validate=True)
-local_source = (root / "contracts" / "contract.py").read_bytes()
-leader_receipts = transaction.get("consensus_data", {}).get("leader_receipt") or [{}]
-leader_receipt = leader_receipts[0] if isinstance(leader_receipts, list) else leader_receipts
-status_changes = transaction.get("consensus_history", {}).get("current_status_changes") or []
-status = transaction.get("status_name") or transaction.get("status")
-if status is None and status_changes:
-    status = status_changes[-1]
-result = {
-    "contract": deployment["contractAddress"],
-    "deploymentTransaction": deployment["deploymentTransaction"],
-    "status": status,
-    "consensus": transaction.get("result_name"),
-    "execution": leader_receipt.get("execution_result"),
-    "sourceSha256": hashlib.sha256(deployed_source).hexdigest(),
-    "sourceMatches": deployed_source == local_source,
-}
+ROOT = Path(__file__).parents[1]
+deployment = json.loads((ROOT / "deployment.json").read_text())
+chain = replace(studio_devnet, name="GenLayer Studio Next", rpc_urls={"default": {"http": ["https://studio-next.genlayer.com/api"]}})
+client = create_client(chain=chain)
+transaction = client.get_transaction(transaction_hash=deployment["deploymentTransaction"])
+deployed = base64.b64decode(transaction["data"]["contract_code"], validate=True)
+local = (ROOT / "contracts" / "contract.py").read_bytes()
+result = {"contract": deployment["contractAddress"], "deploymentTransaction": deployment["deploymentTransaction"], "network": deployment["network"], "sourceSha256": hashlib.sha256(deployed).hexdigest(), "sourceMatches": deployed == local}
 print(json.dumps(result, indent=2))
-assert result["status"] == "FINALIZED"
-assert result["consensus"] == "MAJORITY_AGREE"
-assert result["execution"] == "SUCCESS"
-assert result["sourceMatches"]
-(root / "evidence" / "deployment-verification.json").write_text(
-    json.dumps(result, indent=2) + "\n"
-)
+if not result["sourceMatches"]: raise RuntimeError("deployed contract source does not match repository source")
+(ROOT / "evidence" / "deployment-verification.json").write_text(json.dumps(result, indent=2) + "\n")

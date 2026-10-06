@@ -1,19 +1,12 @@
 {
-  "network": "StudioNet",
-  "account": "SAMiiNW",
-  "contractAddress": "0x2c5Aaa83f41d008b6370B4DE7f4b4F30fb6Ea5d4",
-  "deploymentTransaction": "0x7e1565aa4abcd91e9643343c414550cfba7b62524bc61fdf839a4cc75f86a245",
-  "sourceSha256": "e4db0a5fa5b60018c42152c2db909d6d73c20a5aa3c971589b4a5e7e34654d6c",
-  "sourceCommit": "efc86494f2582ba59e38122691bd77f1fe2eb9ab",
-  "repository": "https://github.com/SAMiiNW/figure-ledger",
-  "publicSite": "https://figure-ledger.pages.dev/",
-  "frontendDeployment": "https://4a896060.figure-ledger.pages.dev",
-  "backendLiveTransactions": {
-    "open": "0x9bfc099456b5f9f692e3b8fb405531e36f792b50bfe59177d65e597d78c1e7d3",
-    "verify": "0x98ff96235f3c73bf37adf33959404529a4e1d710dd3c0b6c568636f064ec2b24"
-  },
-  "browserLiveTransactions": {
-    "open": "0xe2727b7d981a69fb7ec88792733725fccba7b4e82bd17decd08b676d8dfc7d82",
-    "verify": "0xb823ca712174c6052bc469e162776e9670dd098efaabd12927d0354b77e1db64"
-  }
+  "project": "Figure Ledger",
+  "network": "GenLayer Studio Next",
+  "chainId": 61997,
+  "rpcUrl": "https://studio-next.genlayer.com/api",
+  "explorerUrl": "https://explorer-studio-dev.genlayer.com",
+  "contractAddress": "0x29235EFA4319eD831CFEF340d1Fab4d726bc3A17",
+  "deploymentTransaction": "0x2c87fc7a1381a2e7350bc7763ce9dd405578ef7abbb674c7a5c3509fe24a9d6c",
+  "sourceSha256": "b1017fbb20cfd7df95ea8135ff98d12026b48254da15a71454297ddcf61b912e",
+  "sourceCommit": "e79eeda07456e17bba30a96e3570e9274c3bd84c",
+  "repository": "https://github.com/SAMiiNW/figure-ledger"
 }
