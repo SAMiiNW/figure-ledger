@@ -1,10 +1,9 @@
-# Requirement matrix
+# Steward remediation matrix
 
-| Requirement | Implementation | Proof |
-|---|---|---|
-| Extract exact figures from public evidence | `verify_sheet` retrieves every source and returns one integer per source | Contract tests and `evidence/live-run.json` |
-| Preserve numeric provenance | URLs, labels, SHA-256 digests, citations, owner, and auditor are stored | `contracts/contract.py` and finalized receipt |
-| Keep arithmetic deterministic | Contract code computes SUM, DIFFERENCE, or RATIO_BPS | Unit tests cover all operations and bounds |
-| Provide a complete public workflow | Open, verify, lookup, wallet connection, and full demo are available | `https://figure-ledger.pages.dev/` |
-| Prove the deployed artifact | Source hash matches the finalized StudioNet deployment | `evidence/deployment-verification.json` |
-| Prove browser execution | Canonical public site reached `DEMO FINALIZED` with `MATCH` | `evidence/browser-run.json` |
+| Mandatory concern | Implementation path | Targeted test | Deployment or browser proof | Status |
+|---|---|---|---|---|
+| Selected figures must come from an authoritative source. | Add a governor-managed authority registry and require each evidence URL to match its approved HTTPS origin and path prefix. | Reject unapproved authorities, unauthorized registration, duplicate authorities, and mismatched URL paths. | Redeploy exact reviewed source and run a live authority-registration transaction. | UNVERIFIED |
+| Figures must be comparable, not merely numeric. | Freeze one metric, unit, and date-bounded reporting period on the sheet; require every source to contain exact supporting quotes for all three. | Reject missing or forged metric, unit, and period quotes through the validator boundary. | Live result must store context quotes beside each extracted value. | UNVERIFIED |
+| Values must remain bound to evidence. | Validators independently refetch every approved URL, recompute SHA-256 digests, and verify the exact integer plus its value and context quotes. | Reject a well-shaped forged value, digest mismatch, invalid quote, and source-driven instruction. | Live record must preserve URLs, authority IDs, digests, values, and quotes. | UNVERIFIED |
+| The calculation must drive a concrete trust-sensitive consequence. | Replace the cosmetic claimed result with a threshold policy that issues `AUTHORIZED` or `DENIED`; only the named beneficiary can consume an authorization. | Cover authorized consumption, denied consumption, wrong beneficiary, and replay. | Complete a live `OPEN -> VERIFIED -> CONSUMED` lifecycle. | UNVERIFIED |
+| The public workflow and documentation must match the corrected contract. | Update the calculation machine inputs, result receipt, instructions, deployment manifest, and evidence. | Surface test checks new methods and `FINALIZED` handling. | Run the public site with fresh inputs through the final state. | UNVERIFIED |

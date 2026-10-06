@@ -6,6 +6,6 @@ def load(n):
 def test_calculations():
  f=load('calculate');assert f('SUM',[120,80])==200;assert f('DIFFERENCE',[120,80])==40;assert f('RATIO_BPS',[25,100])==2500
 def test_exact_consensus_and_attribution():
- assert 'every exact integer, citation index, and source digest must match exactly' in S;assert 'every value requires source attribution' in S;assert 'distinct source origins required' in S
+ for phrase in ('approve_authority','metric_quote','unit_quote','period_quote','consume_authorization','threshold_decision','distinct authority origins required'):assert phrase in S.lower()
 def test_surface():
- for n in ('open_sheet','verify_sheet','get_sheet'):assert f'def {n}' in S
+ for n in ('approve_authority','open_sheet','verify_sheet','consume_authorization','get_sheet'):assert f'def {n}' in S
