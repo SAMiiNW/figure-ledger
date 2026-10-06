@@ -1,13 +1,19 @@
 {
   "publicSite": "https://figure-ledger.pages.dev/",
-  "sheetId": "FL-DEMO-1791081268997",
+  "deploymentPreview": "https://07edb345.figure-ledger.pages.dev/",
+  "sourceCommit": "fccd3b6",
+  "sheetId": "SEPT-AUTH-1791251325",
   "transactions": {
-    "open": "0xe2727b7d981a69fb7ec88792733725fccba7b4e82bd17decd08b676d8dfc7d82",
-    "verify": "0xb823ca712174c6052bc469e162776e9670dd098efaabd12927d0354b77e1db64"
+    "open": "0xc0b5a1436e9f4f767a8b8b87b2e6ef80855f1bcfe249b38e9492e63af22f712c",
+    "verify": "0x9951c36c29b2d10cfdfee0ac8d031d4fd1e4d0db33257ae7a6b2c0ed6ad4bb85",
+    "consume": "0xcf489787f79db12daa323204d65e132a436493c201c82bd47c80270feb0c835e"
   },
   "values": [120, 80],
   "computed": 200,
-  "finalState": "MATCH",
-  "uiResult": "DEMO FINALIZED",
-  "verifiedAt": "2026-10-04"
+  "decision": "AUTHORIZED",
+  "finalState": "CONSUMED",
+  "uiResult": "FINALIZED RECEIPT LOADED",
+  "walletFallback": "Install MetaMask or another EIP-1193 wallet.",
+  "consoleErrorsAfterDeployment": 0,
+  "verifiedAt": "2026-10-06"
 }
